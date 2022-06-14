@@ -21,10 +21,18 @@ def card_draw():
             new_card = f"{draw_a_name}-{draw_a_suit}"
 
             #storing card information
-            cards_drawn.append(new_card)
-            card_hand += new_card
-            card_hand += "\n"
+            if len(cards_drawn) == 0:
+                cards_drawn.append(new_card)
+            else:
+                for i in range(0, int(hand)):
+                    if cards_drawn[i] == new_card:
+                        break
+                    else:
+                        cards_drawn.append(new_card)
+                        card_hand += new_card
+                        card_hand += "\n"
         print(card_hand)
+        print(cards_drawn)
     else:
         return f"Sorry but {str(hand)} is not an appropriate answer.  Please select a number greater than zero."
 
