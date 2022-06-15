@@ -2,6 +2,7 @@ import random
 
 #empty list used to track cards drawn to avoid duplicate cards.
 cards_drawn = []
+
 # this function is to generate a random card.
 def draw_card():
     # Card components
@@ -17,18 +18,18 @@ def draw_card():
     new_card = f"{draw_a_name}-{draw_a_suit}"
     return new_card
 
-# print(f"Computer drew, {draw_card()}")
+
 
 
 # this function asks the user how many cards they need and keeps pulling until it has a unique list equalling the requested number.
 def card_deck():
-    hand = input("How many cards would you like?: ")
+    # asking user how many cards they want.
+    card_numbers = input("How many cards would you like?: ")
     #empty variable for the future hand
     card_hand = ""
-    #list to confirm if a card has been drawn or not
     count = 1
     if hand.isnumeric():
-        while count <= int(hand):
+        while count <= int(card_numbers):
             temp_card = draw_card()
             if temp_card not in cards_drawn:
                 cards_drawn.append(temp_card)
@@ -40,6 +41,7 @@ def card_deck():
 
 
     return card_hand
+
 
 print(card_deck())
 # print(cards_drawn)
