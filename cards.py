@@ -28,7 +28,7 @@ def card_deck():
     #empty variable for the future hand
     card_hand = ""
     count = 1
-    if hand.isnumeric():
+    if card_numbers.isnumeric():
         while count <= int(card_numbers):
             temp_card = draw_card()
             if temp_card not in cards_drawn:
@@ -37,7 +37,7 @@ def card_deck():
                 card_hand += "\n"
                 count += 1
     else:
-        return f"Sorry but {str(hand)} is not an appropriate answer.  Please select a number greater than zero."
+        return f"Sorry but {str(card_numbers)} is not an appropriate answer.  Please select a number greater than zero."
 
 
     return card_hand
