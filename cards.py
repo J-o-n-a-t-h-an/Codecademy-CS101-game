@@ -1,5 +1,44 @@
 import random
 
+cards_drawn = []
+def draw_card():
+    # Card components
+    #suits = "♠️♣️♥️♦️" - not currently using but left in.  Hoping to make the cards "graphic" instead of the name sometime in the future.
+    suits = ['Spade', 'Heart', 'Club', 'Diamond']
+    card_names = ['A', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
+
+    # "shuffling" a card
+    draw_a_suit = suits[random.randint(0, len(suits)-1)]
+    draw_a_name = card_names[random.randint(0, len(card_names)-1)]
+
+    #combined values to make a card
+    new_card = f"{draw_a_name}-{draw_a_suit}"
+    return new_card
+
+
+print(draw_card())
+
+
+
+def card_deck():
+    global card_count
+    hand = input("How many cards would you like?: ")
+    #empty variable for the future hand
+    card_hand = ""
+    #list to confirm if a card has been drawn or not
+    for i in range(0, int(hand)):
+        cards_drawn.append(draw_card())
+        card_hand += draw_card()
+        card_hand += "\n"
+    return card_hand
+
+print(card_deck())
+
+
+# This is the old version that I will delete later.
+"""
+
+# Rethinking I will either redo this as a class or will do the card drawing as its own function.
 def card_draw():
     hand = input("How many cards would you like?: ")
     #empty variable for the future hand
@@ -37,3 +76,5 @@ def card_draw():
         return f"Sorry but {str(hand)} is not an appropriate answer.  Please select a number greater than zero."
 
 print(card_draw())
+
+"""
