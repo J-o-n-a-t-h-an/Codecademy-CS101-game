@@ -1,9 +1,10 @@
 import random
 
+#empty list used to track cards drawn to avoid duplicate cards.
 cards_drawn = []
 def draw_card():
     # Card components
-    #suits = "♠️♣️♥️♦️" - not currently using but left in.  Hoping to make the cards "graphic" instead of the name sometime in the future.
+    #suits = "♠️♣️♥️♦️" - not currently using this but I've left it in because I hope to replace the suit words with the suite emoji.
     suits = ['Spade', 'Heart', 'Club', 'Diamond']
     card_names = ['A', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
 
@@ -15,24 +16,48 @@ def draw_card():
     new_card = f"{draw_a_name}-{draw_a_suit}"
     return new_card
 
-
-print(draw_card())
+print(f"Computer drew, {draw_card()}")
 
 
 
 def card_deck():
-    global card_count
     hand = input("How many cards would you like?: ")
     #empty variable for the future hand
     card_hand = ""
     #list to confirm if a card has been drawn or not
-    for i in range(0, int(hand)):
-        cards_drawn.append(draw_card())
-        card_hand += draw_card()
-        card_hand += "\n"
+    count = 1
+    while count <= int(hand):
+        temp_card = draw_card()
+        if temp_card not in cards_drawn:
+            cards_drawn.append(temp_card)
+            card_hand += temp_card
+            card_hand += "\n"
+            #card_hand += "\n"
+            count += 1
+
     return card_hand
 
 print(card_deck())
+print(cards_drawn)
+
+
+# This is another old version of junk
+
+"""
+while temp_card not in cards_drawn:
+    cards_drawn.append(temp_card)
+    card_hand += temp_card
+    card_hand += "\n"
+"""
+        
+"""
+for i in range(0, int(hand)):
+    temp_card = draw_card()
+    while temp_card not in cards_drawn:
+        cards_drawn.append(temp_card)
+        card_hand += temp_card
+        card_hand += "\n"
+"""
 
 
 # This is the old version that I will delete later.
