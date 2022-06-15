@@ -27,17 +27,19 @@ def card_deck():
     card_hand = ""
     #list to confirm if a card has been drawn or not
     count = 1
-    while count <= int(hand):
-        temp_card = draw_card()
-        if temp_card not in cards_drawn:
-            cards_drawn.append(temp_card)
-            card_hand += temp_card
-            card_hand += "\n"
-            count += 1
+    if hand.isnumeric():
+        while count <= int(hand):
+            temp_card = draw_card()
+            if temp_card not in cards_drawn:
+                cards_drawn.append(temp_card)
+                card_hand += temp_card
+                card_hand += "\n"
+                count += 1
+    else:
+        return f"Sorry but {str(hand)} is not an appropriate answer.  Please select a number greater than zero."
+
 
     return card_hand
 
 print(card_deck())
 # print(cards_drawn)
-
-#just realized I deleted all the stuff that checks to make sure user is inputing a positive number.
