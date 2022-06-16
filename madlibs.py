@@ -67,7 +67,7 @@ class MadLib:
         It's going to be at {place} on {day_of_week}.
         Please make sure to show up at {chosen_time}, or else you will be required to {verb} a/an {animal} with your {body_part}.
         RSVP at {contact_information}.
-        This MadLib was created by {user_name} on {time_now_formatted}.
+        This MadLib was created by {user_name} on {self.time_now_formatted}.
         """
 
 
