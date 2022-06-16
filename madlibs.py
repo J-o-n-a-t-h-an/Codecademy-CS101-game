@@ -10,22 +10,32 @@ print(f"Party, Vacation, Excused, Hall Pass")
 choice_counter = 0
 while choice_counter == 0:
     madlib_choice = input(f"which Madlib would you like to do?\t")
+    # the following print statements have been used to test that my while/if stuff is working correctly.  Ultimately i'll remove them and put in more appropriate code.
     if madlib_choice.lower() == "party":
         print(f"Lets {madlib_choice}")
-        choice_counter += 1
+        break
     elif madlib_choice.lower() == "vacation":
         print(f"Lets {madlib_choice}")
-        choice_counter += 1
+        break
     elif madlib_choice.lower() == "excused":
         print(f"Lets {madlib_choice}")
-        choice_counter += 1
+        break
     elif madlib_choice.lower() == "hall pass":
         print(f"Lets {madlib_choice}")
-        choice_counter += 1
+        break
     else:
         print(f"Your choice of: {madlib_choice} doesn't match one of the options or is spelled incorrectly, please select again.")
 
-print()
+print(f"""
+\n
+\n
+\n
+\n
+\n
+\n
+""")
+
+
 
 class MadLib:
     """
@@ -59,15 +69,6 @@ class MadLib:
         RSVP at {contact_information}.
         This MadLib was created by {user_name} on {time_now_formatted}.
         """
-
-
-
-
-
-
-
-
-
 
 
 
