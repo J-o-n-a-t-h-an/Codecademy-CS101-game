@@ -6,6 +6,8 @@ The game asks you to select a MadLib and then prompts for all the necessary word
 
 Most of the MadLibs were taken from the [MadLibs printable website](https://www.madlibs.com/printables/) but one of them was created by myself.
 
+![Hall Pass MadLib](Screen Shot 2022-06-17 at 10.44.05.png)
+
 ## Future ideas
 - Implement a solution for MadLib selection that uses more robust tools instead of working through an IF statement but for now the current option works.
 - Implement a solution to ask for all the related word choices at once instead of prompting for each blank space.
