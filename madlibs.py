@@ -13,7 +13,8 @@ print(f"Welcome to MadLibs!")
 print(f"I'm excited to be making a MadLib with you today.")
 user_name = input(f"What is your name? > ")
 print(f"Please select a MadLib to write.")
-print(f"Party, Vacation, Excused, Hall Pass, Haunted Mansion")
+# print(f"1 - Party, 2 - Vacation, Excused, Hall Pass, Haunted Mansion")
+print(f"Party\nVacation\nExcused\nHall Pass\nHaunted Mansion")
 
 
 def main():
@@ -22,18 +23,23 @@ def main():
         madlib_choice = input(f"which Madlib would you like to do? > ")
         # the following print statements have been used to test that my while/if stuff is working correctly.  Ultimately i'll remove them and put in more appropriate code.
         if madlib_choice.lower() == "party":
+            madlibCongrats(madlib_choice)
             madlibParty()
             break
         elif madlib_choice.lower() == "vacation":
+            madlibCongrats(madlib_choice)
             madlibVacation()
             break
         elif madlib_choice.lower() == "excused":
+            madlibCongrats(madlib_choice)
             madlibExcused()
             break
         elif madlib_choice.lower() == "hall pass":
+            madlibCongrats(madlib_choice)
             madlibHallPass()
             break
         elif madlib_choice.lower() == "haunted mansion":
+            madlibCongrats(madlib_choice)
             madlibHauntedMansion()
             break
         else:
@@ -43,12 +49,16 @@ def main():
 def madlibFormatting():
     print("==========================================")
 
+def madlibCongrats(choice):
+    print("+=+==+===+====+=====+=====+====+===+==+=+")
+    #print("\n\n")
+    print(f"Congratulations {user_name} you've chosen the {choice.title()} MadLib!")
+    print("You will be asked for some words and phrases to insert into your madlib.")
+    #print("\n\n")
+    print("+=+==+===+====+=====+=====+====+===+==+=+")
 
 def madlibParty():
     #this madlib was taken from their website
-    print("\n\n\n\n")
-    print(f"Congratulations {user_name} you've chosen the Party MadLib!")
-    print("You will be asked for some words and phrases to insert into your madlib.")
     theme = input(f"please choose a theme for your party. > ")
     place = input(f"Please choose a location. > ")
     day_of_week = input(f"Choose a day of the week. > ")
@@ -72,10 +82,6 @@ def madlibParty():
 
 def madlibVacation():
     #this madlib was taken from their website
-    print("\n\n\n\n")
-    print(f"Congratulations {user_name} you've chosen the Vacation MadLib!")
-    print("You will be asked for some words and phrases to insert into your madlib.")
-    print("Vacation")
     vac_adjective01 = input("Adjective > ")
     vac_adjective02 = input("Adjective > ")
     vac_noun01 = input('Noun > ')
@@ -108,10 +114,6 @@ def madlibVacation():
 
 def madlibExcused():
     #this madlib was taken from their website
-    print("\n\n\n\n")
-    print(f"Congratulations {user_name} you've chosen the Excuse MadLib!")
-    print("You will be asked for some words and phrases to insert into your madlib.")
-    print("Excused")
     excuse_adjective = input('Please select an adjective > ')
     excuse_noun = input('Please select a noun > ')
     excuse_name = input('Please write the name of someone famous > ')
@@ -131,10 +133,6 @@ def madlibExcused():
 
 def madlibHallPass():
     #this madlib was taken from their website
-    print("\n\n\n\n")
-    print(f"Congratulations {user_name} you've chosen the Hall Pass MadLib!")
-    print("You will be asked for some words and phrases to insert into your madlib.")
-    print("Hall Pass")
     hallpass_noun = input("Select a noun > ")
     hallpass_pronoun = input("What is your preferred pronoun? > ")
     hallpass_event = input("What is an event you'd like to attend? > ")
@@ -155,9 +153,6 @@ def madlibHallPass():
 
 def madlibHauntedMansion():
     # This madlib was created from scratch
-    print("\n\n\n\n")
-    print(f"Congratulations {user_name} you've chosen the Haunted Mansion MadLib!")
-    print("You will be asked for some words and phrases to insert into your madlib.")
     man_adjective01 = input('Adjective > ')
     man_family_import = input('Family Name > ')
     man_verb01 = input('Past tense verb > ')
